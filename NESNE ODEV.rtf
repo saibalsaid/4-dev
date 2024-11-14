@@ -1,0 +1,206 @@
+{\rtf1\fbidis\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset162 Calibri;}{\f2\fnil\fcharset238 Calibri;}{\f3\fnil Calibri;}}
+{\colortbl ;\red0\green77\blue187;\red102\green102\blue102;}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\ltrpar\sa200\sl276\slmult1\f0\fs32\lang9                                             \f1\lang1055 4\f0\lang1033 .\'d6\f1\lang1055 DEV\par
+                  NESNEYE Y\f0\lang1033\'d6\f1\lang1055 NEL\f2\u304?\f1 K PROGRAMLAMA\par
+\f0\lang1033            \f1\lang1055 AD\f0\lang1033 /SOYAD:SAIB AL SAEID,OGNO:241041121 \par
+\fs24\lang9 SORU1: \cf1 Matematiksel Hesaplama Yapan Parametresiz ve Geriye De\f2\u287?er D\f0\'f6nd\'fcren Metot\par
+Soru: Bir metot yaz\f2\u305?n; bu metot, kullan\u305?c\u305?dan \f0\'fc\'e7genin taban uzunlu\f2\u287?u ve y\f0\'fcksekli\f2\u287?ini al\u305?p, \f0\'fc\'e7genin alan\f2\u305?n\u305? hesaplayarak geriye d\f0\'f6nd\'fcrs\'fcn. Alan\f2\u305? hesaplamak i\f0\'e7in Taban * Y\'fckseklik / 2 form\'fcl\'fcn\'fc kullan\f2\u305?n.\par
+\u304?pucu: double t\f0\'fcr\'fcnde d\'f6nen bir metot tan\f2\u305?mlamal\u305? ve kullan\u305?c\u305?dan al\u305?nan de\u287?erlerle hesaplama yapmal\u305?s\u305?n\u305?z.\par
+\cf2\f0\lang1033\'c7\'d6\f1\lang1055 Z\f0\lang1033\'dc\f1\lang1055 M\f0\lang1033 :\par
+using System;\par
+class Program\par
+\{\par
+    static void Main()\par
+    \{\par
+        double alan = UcgenAlaniHesapla();\par
+        Console.WriteLine("\'dc\'e7genin alan\f2\u305?: " + alan);\par
+    \}\par
+    static double UcgenAlaniHesapla()\par
+    \{\par
+        Console.Write("\f0\'dc\'e7genin taban uzunlu\f2\u287?unu girin: ");\par
+        double taban = Convert.ToDouble(Console.ReadLine());\par
+        Console.Write("\f0\'dc\'e7genin y\'fcksekli\f2\u287?ini girin: ");\par
+        double yukseklik = Convert.ToDouble(Console.ReadLine());\par
+        double alan = (taban * yukseklik) / 2;\par
+        return alan;\par
+    \}\par
+\}\par
+\cf0\par
+\f0\lang9 SORU2:\cf1 Dizideki En B\'fcy\'fck De\f2\u287?eri Bulan Parametreli ve Geriye De\u287?er D\f0\'f6nd\'fcren Metot\par
+Soru: int t\'fcr\'fcnde bir dizi parametresi alan ve bu dizideki en b\'fcy\'fck de\f2\u287?eri bulan bir metot yaz\u305?n.\par
+\u304?pucu: int d\f0\'f6nen bir metot tan\f2\u305?mlay\u305?p, foreach d\f0\'f6ng\'fcs\'fc ile diziyi dola\f2\'baarak en b\f0\'fcy\'fck de\f2\u287?eri bulabilirsiniz.\par
+\cf0\f0\lang1033\'c7\'d6\f1\lang1055 Z\f0\lang1033\'dc\f1\lang1055 M\f0\lang1033 :\par
+\cf2 using System;\par
+class Program\par
+\{\par
+    static void Main()\par
+    \{\par
+        int[] sayilar = \{ 3, 7, 2, 9, 5 \};\par
+        int enBuyukDeger = EnBuyukDegeriBul(sayilar);\par
+        Console.WriteLine("Dizideki en b\'fcy\'fck de\f2\u287?er: " + enBuyukDeger);\par
+    \}\par
+    static int EnBuyukDegeriBul(int[] dizi)\par
+    \{\par
+        int enBuyuk = dizi[0]; \par
+        foreach (int sayi in dizi)\par
+        \{\par
+            if (sayi > enBuyuk)\par
+            \{\par
+                enBuyuk = sayi;\par
+            \}\par
+        \}\par
+        return enBuyuk;\par
+    \}\par
+\}\par
+\cf0\par
+\f0\lang9 SORU3:\cf1 A\f2\'ba\u305?r\u305? Y\f0\'fcklenmi\f2\'ba (Overloaded) Metot ile Farkl\u305? T\f0\'fcrdeki Verilerin Toplam\f2\u305?n\u305? Bulma\par
+Soru: Ayn\u305? isimle \f0\'fc\'e7 farkl\f2\u305? CalculateSum metodu yaz\u305?n. \u304?lk metot iki int say\u305?y\u305? toplas\u305?n, ikinci metot iki double say\u305?y\u305? toplas\u305?n, \f0\'fc\'e7\'fcnc\'fc metot ise \'fc\'e7 int say\f2\u305?y\u305? toplas\u305?n.\par
+\u304?pucu: Metot isimleri ayn\u305? olmal\u305? fakat parametre t\f0\'fcrleri farkl\f2\u305? olmal\u305?d\u305?r.\par
+\cf0\f0\lang1033\'c7\'d6\f1\lang1055 Z\f0\lang1033\'dc\f1\lang1055 M\f0\lang1033 :\par
+\cf2 using System;\par
+class Program\par
+\{\par
+    static void Main()\par
+    \{\par
+        Console.WriteLine("\f2\u304?ki int say\u305?n\u305?n toplam\u305?: " + CalculateSum(5, 10));\par
+        Console.WriteLine("\u304?ki double say\u305?n\u305?n toplam\u305?: " + CalculateSum(3.5, 7.8));\par
+        Console.WriteLine("\f0\'dc\'e7 int say\f2\u305?n\u305?n toplam\u305?: " + CalculateSum(4, 6, 8));\par
+    \}\par
+    static int CalculateSum(int a, int b)\par
+    \{\par
+        return a + b;\par
+    \}\par
+    static double CalculateSum(double a, double b)\par
+    \{\par
+        return a + b;\par
+    \}\par
+    static int CalculateSum(int a, int b, int c)\par
+    \{\par
+        return a + b + c;\par
+    \}\par
+\}\par
+\cf0\par
+\f0\lang9 SORU4:\cf1 Recursive Metot ile Fibonacci Dizisi Hesaplama\par
+Soru: Bir say\f2\u305?n\u305?n Fibonacci dizisindeki kar\'ba\u305?l\u305?\u287?\u305?n\u305? hesaplayan \f0\'f6zyinelemeli (recursive) bir metot yaz\f2\u305?n. fibonacci(5) \f0\'e7a\f2\u287?r\u305?s\u305?, dizideki 5. Fibonacci say\u305?s\u305?n\u305? d\f0\'f6nd\'fcrmelidir.\par
+\f2\u304?pucu: int d\f0\'f6nen ve kendini \'e7a\f2\u287?\u305?rarak Fibonacci dizisi \f0\'fcreten bir metot yazmal\f2\u305?s\u305?n\u305?z.\par
+\cf0\f0\lang1033\'c7\'d6\f1\lang1055 Z\f0\lang1033\'dc\f1\lang1055 M\f0\lang1033 :\par
+\cf2 using System;\par
+class Program\par
+\{\par
+    static void Main()\par
+    \{\par
+        int n = 5;\par
+        Console.WriteLine($"\{n\}. Fibonacci say\f2\u305?s\u305?: " + Fibonacci(n));\par
+    \}\par
+    static int Fibonacci(int n)\par
+    \{\par
+        if (n <= 1)\par
+            return n;\par
+        else\par
+            return Fibonacci(n - 1) + Fibonacci(n - 2);\par
+    \}\par
+\}\f0\par
+\cf0\f2\par
+\f0\lang9 SORU5: \cf1 Params ile S\f2\u305?n\u305?rs\u305?z Say\u305?da Parametre Alarak Ortalama Hesaplama\par
+Soru: params anahtar kelimesini kullanarak s\u305?n\u305?rs\u305?z say\u305?da double parametre alabilen ve bu say\u305?lar aras\u305?ndaki ortalamay\u305? hesaplayan bir metot yaz\u305?n.\par
+\u304?pucu: params ile dizi gibi parametre alabilir ve d\f0\'f6ng\'fc kullanarak ortalamay\f2\u305? hesaplayabilirsiniz.\par
+\cf0\f0\lang1033\'c7\'d6\f1\lang1055 Z\f0\lang1033\'dc\f1\lang1055 M\f0\lang1033 :\par
+\cf2\f2 using System;\par
+class Program\par
+\{\par
+    static void Main()\par
+    \{\par
+        double ortalama = OrtalamaHesapla(3.5, 7.8, 9.2, 4.1);\par
+        Console.WriteLine("Ortalama: " + ortalama);\par
+    \}\par
+    static double OrtalamaHesapla(params double[] sayilar)\par
+    \{\par
+        double toplam = 0;\par
+        foreach (double sayi in sayilar)\par
+        \{\par
+            toplam += sayi;\par
+        \}\par
+        return sayilar.Length > 0 ? toplam / sayilar.Length : 0;\par
+    \}\par
+\}\par
+\cf0\f0\lang9\par
+SORU6:\cf1 Dizi Elemanlar\f2\u305?n\u305? Toplayan ve Filtreleme \'aaart\u305? Ekleyen Metot\par
+Soru: int t\f0\'fcr\'fcnde bir dizi ve bir filtre de\f2\u287?eri (int) alan bir metot yaz\u305?n. Bu metot, filtre de\u287?erinden b\f0\'fcy\'fck olan t\'fcm elemanlar\f2\u305? toplas\u305?n ve toplam\u305? d\f0\'f6nd\'fcrs\'fcn.\par
+\f2\u304?pucu: int t\f0\'fcr\'fcnde bir metot tan\f2\u305?mlay\u305?p foreach d\f0\'f6ng\'fcs\'fc ile filtreyi uygulayarak toplam\f2\u305? hesaplayabilirsiniz.\cf0\par
+\f0\lang1033\'c7\'d6\f1\lang1055 Z\f0\lang1033\'dc\f1\lang1055 M\f0\lang1033 :\par
+\cf2\lang9 using System;\par
+class Program\par
+\{\par
+    static void Main()\par
+    \{\par
+        int[] sayilar = \{ 3, 7, 10, 15, 2, 8 \};\par
+        int filtre = 5;\par
+        int toplam = FiltreliToplam(sayilar, filtre);\par
+        Console.WriteLine("Filtre de\f2\u287?erinden b\f0\'fcy\'fck elemanlar\f2\u305?n toplam\u305?: " + toplam);\par
+    \}\par
+    static int FiltreliToplam(int[] dizi, int filtre)\par
+    \{\par
+        int toplam = 0;\par
+        foreach (int sayi in dizi)\par
+        \{\par
+            if (sayi > filtre)\par
+            \{\par
+                toplam += sayi;\par
+            \}\par
+        \}\par
+        return toplam;\par
+    \}\par
+\}\par
+\cf0\par
+\f0 SORU7:\cf1 Se\'e7meli (Optional) Parametre ile Belirli Ya\f2\'batan Sonraki Y\u305?llar\u305? Sayma\par
+Soru: Bir ya\'ba de\u287?eri alan bir metot yaz\u305?n. E\u287?er ya\'ba belirtilmezse varsay\u305?lan olarak 18 olsun ve metot, verilen ya\'ba\u305?n 18\f3\rquote\f2 den ne kadar fazla oldu\u287?unu d\f0\'f6nd\'fcrs\'fcn.\par
+\f2\u304?pucu: int t\f0\'fcr\'fcnde bir metot tan\f2\u305?mlay\u305?p varsay\u305?lan parametre kullanarak ya\'ba\u305? hesaplayabilirsiniz.\par
+\cf0\f0\lang1033\'c7\'d6\f1\lang1055 Z\f0\lang1033\'dc\f1\lang1055 M\f0\lang1033 :\par
+\cf2\f2\lang9 using System;\par
+class Program\par
+\{\par
+    static void Main()\par
+    \{\par
+        Console.WriteLine("Ya\'ba fark\u305? (varsay\u305?lan ya\'ba): " + YasFarki());\par
+        Console.WriteLine("Ya\'ba fark\u305? (ya\'ba 25): " + YasFarki(25));\par
+    \}\par
+    static int YasFarki(int yas = 18)\par
+    \{\par
+        return yas > 18 ? yas - 18 : 0;\par
+    \}\par
+\}\par
+\cf0\f0\par
+SORU8:\cf1 Geriye Koleksiyon D\'f6nd\'fcren ve Veriyi Filtreleyen Metot\par
+Soru: string t\'fcr\'fcnde bir dizi alan bir metot yaz\f2\u305?n. Bu metot, sadece uzunlu\u287?u 5 karakterden b\f0\'fcy\'fck olan elemanlar\f2\u305? i\f0\'e7eren bir List<string> d\'f6nd\'fcrs\'fcn.\par
+\f2\u304?pucu: List<string> t\f0\'fcr\'fcnde bir metot tan\f2\u305?mlayarak d\f0\'f6ng\'fc ile filtreleme yapabilirsiniz.\par
+\cf0\lang1033\'c7\'d6\f1\lang1055 Z\f0\lang1033\'dc\f1\lang1055 M\f0\lang1033 :\par
+\cf2\lang9 using System;\par
+using System.Collections.Generic;\par
+class Program\par
+\{\par
+    static void Main()\par
+    \{\par
+        string[] kelimeler = \{ "elma", "armut", "\'e7ilek", "kavun", "karpuz", "muz", "ananas" \};\par
+        List<string> uzunKelimeler = UzunKelimeleriFiltrele(kelimeler);\par
+        Console.WriteLine("Uzunlu\f2\u287?u 5 karakterden b\f0\'fcy\'fck kelimeler:");\par
+        foreach (string kelime in uzunKelimeler)\par
+        \{\par
+            Console.WriteLine(kelime);\par
+        \}\par
+    \}\par
+    static List<string> UzunKelimeleriFiltrele(string[] dizi)\par
+    \{\par
+        List<string> filtrelenmisListe = new List<string>();\par
+        foreach (string kelime in dizi)\par
+        \{\par
+            if (kelime.Length > 5)\par
+            \{\par
+                filtrelenmisListe.Add(kelime);\par
+            \}\par
+        \}\par
+        return filtrelenmisListe;\par
+    \}\par
+\}\par
+}
+ 
